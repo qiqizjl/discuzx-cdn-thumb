@@ -29,8 +29,8 @@ if isThumb == true and ngx.var.arg_aid ~= nil then
         end
         local url = attach:get_thumb_url(att, w)
         if url ~= nil then
-            ngx.redirect(url, 301)
-            return ngx.exit(301)
+            ngx.redirect(url, ngx.HTTP_MOVED_PERMANENTLY)
+            return ngx.exit(ngx.HTTP_MOVED_PERMANENTLY)
         end
     end
 end
