@@ -1,0 +1,46 @@
+return {
+    site = {
+        -- 本地附件
+        local_attachment = {
+            url = "",
+            type = "qiniu"
+        },
+        -- 远程附件
+        remote_attachment = {
+            url = "",
+            type = "qiniu"
+        }
+    },
+    cache = {
+        -- 缓存Dict
+        cache_store = "attachment_thumb",
+        -- 缓存时长
+        cache_time = 7 * 24 * 60 * 60
+    },
+    db = {
+        timeout = 5000,
+        -- 数据库链接配置
+        connect_config = {
+            --数据库地址
+            host = "",
+            -- 数据库端口
+            port = 3306,
+            -- 数据库名称
+            database = "",
+            -- 数据库用户名
+            user = "",
+            -- 数据库密码
+            password = "",
+            max_packet_size = 1024 * 1024
+        },
+        -- 数据库连接池
+        pool_config = {
+            -- 连接池释放时间 毫秒
+            max_idle_timeout = 20000, 
+            -- 连接池长度
+            pool_size = 50 -- connection pool size
+        },
+        -- 表前缀
+        table_prefix = "pre_"
+    }
+}
