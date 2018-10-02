@@ -1,6 +1,6 @@
 local _M = {}
 local mt = {__index = _M}
-local config = require("config.cache")
+local config = require("config.thumb").cache
 local json = require("cjson")
 
 function _M.getClient(self)

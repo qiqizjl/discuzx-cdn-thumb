@@ -3,7 +3,7 @@ local type = type
 local ipairs = ipairs
 local mysql = require("resty.mysql")
 local utils = require("utils.utils")
-local config = require("config.db")
+local config = require("config.thumb").db
 local DB = {}
 
 function DB:new(conf)
