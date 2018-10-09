@@ -30,6 +30,39 @@ nginx+ngx_lua+cjson/openresty
 
 3.修改**config/thumb.lua**中的配置文件(DB信息/附件URL/缩略图信息)
 
+3.1 site配置
+
+* local_attachment 本地附件
+    * url 附件请求地址
+    * type CDN类型 目前支持qiniu/aliyun 可在service/thumb中自由扩展
+* remote_attachment 远程附件
+    * url 附件请求地址
+    * type CDN类型 目前支持qiniu/aliyun 可在service/thumb中自由扩展
+
+3.2 cache配置
+
+* cache_store 缓存存储模块 要和4.1配置一致
+* cache_time  缓存时间 单位秒
+
+
+3.3 db配置
+
+* connect_config DZX数据库链接信息
+    * host 数据库地址
+    * port 数据库端口
+    * database 数据库名称
+    * user 链接DB用户名
+    * password 数据库密码
+    * max_packet_size MySQL返回最大数据包 默认即可
+
+* pool_config 数据库连接池
+    * max_idle_timeout 链接最长释放时间
+    * pool_size 连接池长度
+
+* table_prefix DZX表前缀
+
+* timeout 数据库超时时间
+
 4.修改nginx配置文件
 
 4.1. http block
