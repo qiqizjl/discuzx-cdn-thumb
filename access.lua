@@ -29,6 +29,7 @@ if isThumb == true and ngx.var.arg_aid ~= nil then
         end
         local url = attach:get_thumb_url(att, w)
         if url ~= nil then
+            ngx.header["X-Powered-By"] = "ThumbServer/1.1"
             ngx.redirect(url, ngx.HTTP_MOVED_PERMANENTLY)
             return ngx.exit(ngx.HTTP_MOVED_PERMANENTLY)
         end

@@ -51,6 +51,7 @@ function _M:get_thumb_url(attach, w)
     if attach_config.type == nil or attach_config.type == "" then
         return nil
     end
+    ngx.log(ngx.INFO,attach_config.type)
     local url = attach_config.url .. attach["attachment"]
     local thumb_module = require("service.thumb." .. attach_config.type)
     url = thumb_module:thumb(url,w)
