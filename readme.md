@@ -77,6 +77,7 @@ lua_shared_dict attachment_thumb 128m;
 
 4.2. server block
 ~~~ nginx
+#项目目录需要时完整目录，末尾必须带上/
 set $PROJECT_PATH "项目部署目录";
 ~~~
 
